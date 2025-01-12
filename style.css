@@ -1,0 +1,111 @@
+fieldset{	
+	display: flex;
+	flex-direction: column;
+/*	align-items: center;*/
+	gap: 20px;
+	width: 40%;
+			
+}
+
+form { 
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+/*	margin-left: 170%;*/
+/*	width: 200%;*/
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+.container_2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+label {
+	display: inline-block;
+	width: 80px;
+	}
+
+input{
+	width: 66%;
+}
+
+.submit {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 130px;
+
+	}
+
+.menu{
+	border: 1px solid gray;
+	background-color: skyblue;
+	
+}
+
+nav ul{
+	display: flex;/*	par defaut le flex est flex-direction:row;*/
+	gap: 50px;
+	justify-content: center;
+	list-style-type: none;/*supprime les puces*/
+	margin: 0px;
+	padding: 0px;
+
+}
+
+nav ul a {
+/*	supprimer le soulignement des liens*/
+	text-decoration: none;
+	color: white;
+}
+
+nav ul a:hover{
+	background-color: blue;
+	color: white;
+}
+
+
+nav ul a.active{
+	background-color: gray;
+}
+
+nav ul li a {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+
+table, th, td{
+	border: 1px solid gray;
+	padding: 20px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	color: skyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
