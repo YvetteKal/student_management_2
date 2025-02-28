@@ -11,7 +11,7 @@
 	<div class="menu">
 		<nav>
 			<ul>
-				<li> <a href="home.php" >Home</a> </li>
+				<li> <a href="index.php" >Home</a> </li>
 				<li> <a href="afficher_etudiants.php" class="active">Etudiants</a> </li>
 			</ul>
 		</nav>
@@ -22,44 +22,43 @@
 		<div>
 
 			<table>
-			<tr>
-				<th>ID</th>
-				<th>Nom</th>
-				<th>Age</th>
-				<th>Email</th>
-				<th>Actions</th>
-			</tr>
+				<tr>
+					<th>ID</th>
+					<th>Nom</th>
+					<th>Age</th>
+					<th>Email</th>
+					<th>Actions</th>
+				</tr>
 
-			<?php 
+				<?php 
 
-				$sql = "SELECT * FROM etudian";
-				$results = $conn->query($sql);
+					$sql = "SELECT * FROM etudian";
+					$results = $conn->query($sql);
 
-				if($results -> num_rows > 0){
+					if($results -> num_rows > 0){
 
-					while ($row = $results -> fetch_assoc()){
+						while ($row = $results -> fetch_assoc()){
 
-						echo "<tr>
+							echo "<tr>
 
-								<td>{$row['id']}</td>
-								<td>{$row['nom']}</td>
-								<td>{$row['age']}</td>
-								<td>{$row['email']}</td>
-								<td>
-									<a style='text-decoration:none; border: 1px solid gray; background-color:gray; color: white; padding:5px;' href='edit_etudiant.php?id={$row['id']}'>Edit</a>
-									<a style='text-decoration:none; border: 1px solid gray; background-color:red; color: white; padding:5px;'
-									href='delete_etudiant.php?id={$row['id']}'>Delete</a>
+									<td>{$row['id']}</td>
+									<td>{$row['nom']}</td>
+									<td>{$row['age']}</td>
+									<td>{$row['email']}</td>
+									<td>
+										<a style='text-decoration:none; border: 1px solid gray; background-color:gray; color: white; padding:5px;' href='edit_etudiant.php?id={$row['id']}'>Edit</a>
+										<a style='text-decoration:none; border: 1px solid gray; background-color:red; color: white; padding:5px; 'href='delete_etudiant.php?id={$row['id']}'>Delete</a>
 
-								</td>
+									</td>
 
-							  </tr>	
+								</tr>	
 
-						";
+							";
+						}
+
 					}
 
-				}
-
-			 ?>
+				?>
 
 		</table>
 			

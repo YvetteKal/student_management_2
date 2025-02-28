@@ -5,7 +5,8 @@
 
 include 'db.php';
 
-	 
+	$message = "";
+
 	if (isset($_GET['id'])){   #if we get the id from the page URL
 
 		$id = $_GET['id'];
@@ -16,8 +17,7 @@ include 'db.php';
 
 
 
-
-
+		
 		#after the user has modified the form inputs and clicked submit
 
 		if(isset($_POST['submit'])){
@@ -30,10 +30,13 @@ include 'db.php';
 
 
 			if ($conn -> query($sql) === TRUE){
-				echo "<p style = 'text-align: center; color: green'>Etudiant mis à jour avec succès </p>";
+				// echo "<p style = 'text-align: center; color: green'>Etudiant mis à jour avec succès </p>";
+				$message = "<p style='text-align: center; color: green'>Étudiant mis à jour avec succès</p>";
 				header("Location : afficher_etudiants.php");
 			}else {
-				echo " <p style = 'text-align: center; color: red'> Erreur de mise à jour" . $conn -> error . " et " . $sql ." </p>";
+				// echo " <p style = 'text-align: center; color: red'> Erreur de mise à jour" . $conn -> error . " et " . $sql ." </p>";
+				$message = "<p style='text-align: center; color: red'>Erreur de mise à jour: " . $conn->error . " et " . $sql . "</p>";
+
 			}
 
 		}
@@ -53,7 +56,7 @@ include 'db.php';
 	<div class="menu">
 		<nav>
 			<ul>
-				<li> <a href="home.php" >Home</a> </li>
+				<li> <a href="index.php" >Home</a> </li>
 				<li> <a href="afficher_etudiants.php">Etudiants</a> </li>
 			</ul>
 		</nav>
@@ -96,7 +99,8 @@ include 'db.php';
 			
 		</form>
 		
-
+	<!-- Affichage du message après le formulaire -->
+	<?php echo $message; ?>
 	</div>
 
 </body>
